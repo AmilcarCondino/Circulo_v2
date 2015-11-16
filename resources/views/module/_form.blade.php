@@ -1,3 +1,7 @@
+@if(isset($parent_module))
+    <input type="hidden" name="parent_module" value="{{ $parent_module->id }}">
+@endif
+
 <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
     {!! Form::label('name', 'Name', ['class' => 'col-sm-2 control-label']) !!}
     <div class="col-sm-10">

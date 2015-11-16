@@ -19,12 +19,22 @@ class Module extends Model
         'parent_module'
     ];
 
+
+
     /**
      * Get the project that owns the module.
      */
     public function project()
     {
         return $this->belongsTo(Project::class);
+    }
+
+    /**
+    +     * Get the module that owns the module.
+    +     */
+    public function parentModule()
+    {
+        return $this->belongsTo(self::class, 'parent_module');
     }
 
     /**

@@ -23,9 +23,7 @@ class PageRequest extends Request {
     public function rules()
     {
         $rules = [
-            'name' => 'required',
-            'page_stage' => 'required',
-            'layout_stage' => 'required'
+
 
         ];
 

@@ -6696,5 +6696,8 @@ button.close {
     display: none !important;
   }
 }
-
+.table td.shrink {
+   white-space: nowrap;
+   width: 1px;
+ }
 /*# sourceMappingURL=app.css.map */

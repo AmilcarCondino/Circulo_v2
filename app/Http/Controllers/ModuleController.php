@@ -50,6 +50,21 @@ class ModuleController extends Controller
         return view('module.show', compact('project', 'module'));
     }
 
+
+    /**
+     * Show the form for creating a new nested resource.
+     *
+     * @param  Project $project
+     * @param  Module $parent_module
+     * @return \Illuminate\Http\Response
+     */
+    public function submodule(Project $project, Module $parent_module)
+    {
+        $module = new Module();
+        return view('module.create', compact('project', 'module', 'parent_module'));
+    }
+
+
     /**
      * Show the form for editing the specified resource.
      *

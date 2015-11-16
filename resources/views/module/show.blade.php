@@ -2,6 +2,8 @@
 
 @section('content')
 
+    @include('partials.breadcrumbs')
+
     <div class="row">
 
         <div class="col-md-12">
@@ -30,6 +32,7 @@
         </div>
 
         <div class="col-md-12">
+            <div class="row">
 
             <h2>
                 Pages

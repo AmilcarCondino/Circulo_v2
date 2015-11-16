@@ -2,6 +2,8 @@
 
 @section('content')
 
+    @include('partials.breadcrumbs')
+
     <div class="row">
 
         <div class="col-md-12">

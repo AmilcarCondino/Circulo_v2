@@ -17,6 +17,9 @@ Route::get('/', function () {
 
 Route::resource('project', 'ProjectController');
 Route::resource('project.module', 'ModuleController');
+Route::get('project/{project}/module/{module}/submodule/create', [
+    'as' => 'project.module.submodule.create', 'uses' => 'ModuleController@submodule'
+]);
 Route::resource('project.module.page', 'PageController');
 Route::resource('project.module.page.image', 'ImageController');
 Route::resource('project.module.page.image.proposal', 'ProposalController');

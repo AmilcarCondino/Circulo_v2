@@ -2,6 +2,8 @@
 
 @section('content')
 
+    @include('partials.breadcrumbs')
+
     <div class="row">
 
         <div class="col-md-12">
@@ -59,43 +61,45 @@
             </tbody>
         </table>
 
-        <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
 
-            <h2>Modules
-                <small class="pull-right">
-                    {!! link_to_route('project.module.create', 'New Module', [$project], ['class' => 'btn btn-success']) !!}
-                </small>
-            </h2>
+                <h2>
+                    Modules
+                    <small class="pull-right">
+                        {!! link_to_route('project.module.create', 'New Module', [$project], ['class' => 'btn btn-success']) !!}
+                    </small>
+                </h2>
 
-            <table class="table table-condensed">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Paginas</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($project->rootModules as $module)
+                <table class="table table-condensed">
+                    <thead>
                     <tr>
-                        <td>{{ $module->id }}</td>
+                        <th>Name</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($project->rootModules as $module)
+                    <tr>
                         <td>{!! link_to_route('project.module.show', $module->name, [$project, $module], ['class' => '']) !!}</td>
-                        <td>{{ $module->projected_total_pages }}</td>
-                        <td>{!! link_to_route('project.module.edit', 'Edit', [$project, $module], ['class' => 'btn btn-primary']) !!}</td>
-                        <td>
+                        <td class="shrink">{!! link_to_route('project.module.edit', 'Edit', [$project, $module], ['class' => 'btn btn-xs btn-primary']) !!}</td>
+                        <td class="shrink">{!! link_to_route('project.module.submodule.create', 'New Submodule', [$project, $module], ['class' => 'btn btn-xs btn-success']) !!}</td>
+                        <td class="shrink">
                             {!! Form::open(['route' => ['project.module.destroy', $project, $module], 'method' => 'delete']) !!}
-                                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                            {!! Form::submit('Delete', ['class' => 'btn btn-xs btn-danger']) !!}
                             {!! Form::close() !!}
                         </td>
                     </tr>
-                @endforeach
-                </tbody>
-            </table>
+                    @foreach($module->submodules as $submodule)
+                    @include('project._submodules', ['module' => $submodule, 'count' => 1])
+                    @endforeach
+                    @endforeach
+                    </tbody>
+                </table>
 
+            </div>
         </div>
 
-    </div>
-
-@endsection
+        @endsection
