@@ -43,6 +43,9 @@ class ProjectController extends Controller
     {
         $project = new Project( $request->all() );
         $project->save();
+
+        $project->moduleAndPageCreate($request);
+
         return redirect()->route('project.index');
     }
 
