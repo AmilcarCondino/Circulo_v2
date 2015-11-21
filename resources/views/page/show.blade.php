@@ -5,53 +5,51 @@
     @include('partials.breadcrumbs')
 
     <div class="row">
-
-        <div class="col-md-12">
-            <h1>
-                {{ $page->name }}
-                <small class="pull-right">
-                    {!! link_to_route('project.module.page.image.create', 'New Image', [$project, $module, $page], ['class' => 'btn btn-success']) !!}
-                    {!! link_to_route('project.module.page.edit', 'Edit', [$project, $module, $page], ['class' => 'btn btn-primary']) !!}
-                </small>
-            </h1>
+        <div class="col-md-2">
+            <h1>Page {{ $page->name }}</h1>
         </div>
+        <div class="col-md-8">
+            @include('page.edit', ['page' => $page])
+        </div>
+        <div class="col-md-2">
+            {!! Form::open(['route' => ['project.module.page.image.store', $project, $module, $page], 'method' => 'post']) !!}
+                {!! Form::submit('Add Image', ['class' => 'btn btn-primary']) !!}
+            {!! Form::close() !!}
+        </div>
+    </div>
 
-        <div class="col-md-12">
+    <div class="row">
 
-            <h2>Images</h2>
+        @foreach($page->images as $image)
+        <div class="col-md-6">
+            <div class="well">
+                @include('image.edit', ['image' => $image])
 
-            <table class="table table-condensed">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Asignado</th>
-                    <th>Etapa</th>
-                    <th>Pedido</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($page->images as $image)
+                <table class="table table-condensed">
+                    <thead>
                     <tr>
-                        <td>{{ $image->id }}</td>
-                        <td>{!! link_to_route('project.module.page.image.show', $image->name, [$project, $module, $page, $image], ['class' => '']) !!}</td>
-                        <td>{{ $image->assigned_to }}</td>
-                        <td>{{ $image->stage }}</td>
-                        <td>{{ $image->request }}</td>
-                        <td>{!! link_to_route('project.module.page.image.edit', 'Edit', [$project, $module, $page, $image], ['class' => 'btn btn-primary']) !!}</td>
-                        <td>
-                            {!! Form::open(['route' => ['project.module.page.image.destroy', $project, $module, $page, $image], 'method' => 'delete']) !!}
-                                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                        <th>Name</th>
+                        <th>Selected</th>
+                        <th>Downloaded</th>
+                        <th>Rejected</th>
+                        <th>URL</th>
+                        <th>
+                            {!! Form::open(['route' => ['project.module.page.image.proposal.store', $project, $module, $page, $image], 'method' => 'post']) !!}
+                                {!! Form::submit('Add Proposal', ['class' => 'btn btn-sm btn-primary']) !!}
                             {!! Form::close() !!}
-                        </td>
+                        </th>
                     </tr>
-                @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    @foreach($image->proposals as $proposal)
+                    @include('proposal.edit', ['image' => $image, 'proposal' => $proposal])
+                    @endforeach
+                    </tbody>
+                </table>
 
+            </div>
         </div>
+        @endforeach
 
     </div>
 

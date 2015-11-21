@@ -55,18 +55,6 @@ class PageController extends Controller
         return view('page.show', compact('project', 'module', 'page'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param Project $project
-     * @param Module $module
-     * @param Page $page
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Project $project, Module $module, Page $page)
-    {
-        return view('page.edit', compact('project', 'module', 'page'));
-    }
 
     /**
      * Update the specified resource in storage.
@@ -97,4 +85,5 @@ class PageController extends Controller
         $page->delete();
         return redirect()->route('project.module.show', [$project, $module]);
     }
+
 }
