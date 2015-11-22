@@ -42,7 +42,7 @@ class ProposalController extends Controller
      */
     public function store(ImageRequest $request, Project $project, Module $module, Page $page, Image $image)
     {
-        $proposal = new Proposal( $request->all() );
+        $proposal = new Proposal;
         $image->proposals()->save($proposal);
         return redirect()->route('project.module.page.image.show', [$project, $module, $page, $image]);
     }

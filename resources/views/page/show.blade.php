@@ -42,7 +42,7 @@
                     </thead>
                     <tbody>
                     @foreach($image->proposals as $proposal)
-                    @include('proposal.edit', ['image' => $image, 'proposal' => $proposal])
+                        @include('proposal.edit', ['image' => $image, 'proposal' => $proposal])
                     @endforeach
                     </tbody>
                 </table>

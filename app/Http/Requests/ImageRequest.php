@@ -23,7 +23,7 @@ class ImageRequest extends Request {
     public function rules()
     {
         $rules = [
-            'name' => 'required',
+
         ];
 
         return $rules;
