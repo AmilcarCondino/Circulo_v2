@@ -47,7 +47,9 @@ class ModuleController extends Controller
      */
     public function show(Project $project, Module $module)
     {
-        return view('module.show', compact('project', 'module'));
+
+        $module_list = Module::lists('name', 'name');
+        return view('module.show', compact('project', 'module', 'module_list'));
     }
 
 

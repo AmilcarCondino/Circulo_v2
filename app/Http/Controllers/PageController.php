@@ -67,22 +67,24 @@ class PageController extends Controller
      */
     public function update(PageRequest $request, Project $project, Module $module, Page $page)
     {
-        $page->update( $request->all() );
+
 
         $pages = $_POST;
+
+        $module = Module::where('project_id', '=', $project->id)
+                            ->where('name', '=', $_POST['module_name'])->first();
 
         foreach ($pages as $val)
         {
             if (is_numeric($val))
             {
-                $p = Page::where('id', '=', $val)->get();
-                $p->module_id = '3';
+                $p = Page::where('id', '=', $val)->first();
+                $p->module_id = $module->id;
                 $p->save();
             }
         }
 
-        die;
-
+        $page->update( $request->all() );
         $page->save();
         return redirect()->route('project.module.show', [$project, $module]);
     }
