@@ -17,7 +17,8 @@ class Page extends Model
         'page_stage',
         'layout_stage',
         'module_id',
-        'notes'
+        'notes',
+        'reorder'
     ];
 
     /**

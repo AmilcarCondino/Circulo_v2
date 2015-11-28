@@ -65,4 +65,42 @@
 
 </div>
 
+
+
+
+{!! Form::open(['route' => ['project.module.page.update', $project, $module, $page], 'method' => 'put']) !!}
+
+    @foreach($module->pages as $page)
+    <div class="col-md-2">
+        <div class="well">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <div class="form-group {{ $errors->has('selected') ? 'has-error' : '' }}">
+                        {!! Form::label($page->id, $page->name, ['class' => 'col-sm-2 control-label']) !!}
+                        <div class="col-sm-10">
+                            {!! Form::checkbox($page->id, $page->id) !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endforeach
+
+    <div class="row">
+        <div class="col-xs-12">
+            {!! Form::submit('Reordenar', ['class' => 'btn btn-xs btn-danger pull-right']) !!}
+            {!! Form::close() !!}
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
 @endsection

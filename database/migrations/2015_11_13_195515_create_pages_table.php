@@ -15,9 +15,10 @@ class CreatePagesTable extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('module_id')->index();
-            $table->string('name');
+            $table->integer('name');
             $table->string('page_stage');
             $table->string('layout_stage');
+            $table->boolean('reorder')->nullable();
             $table->text('notes')->nullable();
             $table->timestamps();
         });
