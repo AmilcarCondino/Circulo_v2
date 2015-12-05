@@ -65,7 +65,7 @@
             <div class="col-md-12">
 
                 <h2>
-                    Modules
+                    Modulos
                     <small class="pull-right">
                         {!! link_to_route('project.module.create', 'New Module', [$project], ['class' => 'btn btn-success']) !!}
                     </small>
@@ -74,7 +74,7 @@
                 <table class="table table-condensed">
                     <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>Nombre</th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -84,8 +84,8 @@
                     @foreach($project->rootModules as $module)
                     <tr>
                         <td>{!! link_to_route('project.module.show', $module->name, [$project, $module], ['class' => '']) !!}</td>
-                        <td class="shrink">{!! link_to_route('project.module.edit', 'Edit', [$project, $module], ['class' => 'btn btn-xs btn-primary']) !!}</td>
-                        <td class="shrink">{!! link_to_route('project.module.submodule.create', 'New Submodule', [$project, $module], ['class' => 'btn btn-xs btn-success']) !!}</td>
+                        <td class="shrink">{!! link_to_route('project.module.edit', 'Editar', [$project, $module], ['class' => 'btn btn-xs btn-primary']) !!}</td>
+                        <td class="shrink">{!! link_to_route('project.module.submodule.create', 'Nuevo Submodulo', [$project, $module], ['class' => 'btn btn-xs btn-success']) !!}</td>
                         <td class="shrink">
                             {!! Form::open(['route' => ['project.module.destroy', $project, $module], 'method' => 'delete']) !!}
                             {!! Form::submit('Delete', ['class' => 'btn btn-xs btn-danger']) !!}

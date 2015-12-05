@@ -6,7 +6,7 @@
 
         <div class="col-md-12">
 
-            <h1>Create Page</h1>
+            <h1>Crear Pagina</h1>
 
             {!! Form::model($page, ['route' => ['project.module.page.store', $project, $module], 'class' => 'form-horizontal']) !!}
 

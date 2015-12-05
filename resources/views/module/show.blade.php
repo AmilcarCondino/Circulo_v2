@@ -15,7 +15,7 @@
 <div class="row">
 
     <div class="col-md-12">
-        <p><strong>Planned pages:</strong> {{ $module->projected_total_pages }}</p>
+        <p><strong>Paginas Planeadas:</strong> {{ $module->projected_total_pages }}</p>
     </div>
 
 </div>
@@ -23,7 +23,7 @@
 <div class="row">
 
     <div class="col-md-10">
-        <h2>Pages</h2>
+        <h2>Paginas</h2>
     </div>
 
     <div class="col-md-2">
@@ -44,12 +44,12 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <p><strong>Status: </strong>{{ $page->page_stage }}</p>
+                    <p><strong>Estado: </strong>{{ $page->page_stage }}</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <p><strong>Layout: </strong>{{ $page->layout_stage }}</p>
+                    <p><strong>Edicion: </strong>{{ $page->layout_stage }}</p>
                 </div>
             </div>
             <div class="row">

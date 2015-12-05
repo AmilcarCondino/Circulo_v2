@@ -69,18 +69,21 @@ class PageController extends Controller
     {
 
 
-        $pages = $_POST;
-
-        $module = Module::where('project_id', '=', $project->id)
-                            ->where('name', '=', $_POST['module_name'])->first();
-
-        foreach ($pages as $val)
+        if (isset ($_POST['module_name']) )
         {
-            if (is_numeric($val))
+            $pages = $_POST;
+
+            $module = Module::where('project_id', '=', $project->id)
+                                ->where('name', '=', $_POST['module_name'])->first();
+
+            foreach ($pages as $val)
             {
-                $p = Page::where('id', '=', $val)->first();
-                $p->module_id = $module->id;
-                $p->save();
+                if (is_numeric($val))
+                {
+                    $p = Page::where('id', '=', $val)->first();
+                    $p->module_id = $module->id;
+                    $p->save();
+                }
             }
         }
 

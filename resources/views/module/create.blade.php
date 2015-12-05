@@ -6,7 +6,7 @@
 
         <div class="col-md-12">
 
-            <h1>Create Module</h1>
+            <h1>Crear Nuevo Modulo</h1>
 
             {!! Form::model($module, ['route' => ['project.module.store', $project], 'class' => 'form-horizontal']) !!}
 

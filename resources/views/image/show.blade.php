@@ -10,7 +10,7 @@
             <h1>
                 {{ $image->name }}
                 <small class="pull-right">
-                    {!! link_to_route('project.module.page.image.edit', 'Edit', [$project, $module, $page, $image], ['class' => 'btn btn-primary']) !!}
+                    {!! link_to_route('project.module.page.image.edit', 'Editar', [$project, $module, $page, $image], ['class' => 'btn btn-primary']) !!}
                 </small>
             </h1>
 
@@ -18,7 +18,7 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>Nombre</th>
                     <th>Asignado</th>
                     <th>Etapa</th>
                     <th>Pedido</th>
@@ -41,7 +41,7 @@
         <div class="col-md-12">
 
             <h2>
-                Proposals
+                Propuestas
                 <small class="pull-right">
                     {!! link_to_route('project.module.page.image.proposal.create', 'New Proposal', [$project, $module, $page, $image], ['class' => 'btn btn-success']) !!}
                 </small>
@@ -51,7 +51,7 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>Nombre</th>
                     <th></th>
                     <th></th>
                 </tr>

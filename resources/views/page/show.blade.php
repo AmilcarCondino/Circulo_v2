@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="col-md-2">
-            <h1>Page {{ $page->name }}</h1>
+            <h1>PAgina {{ $page->name }}</h1>
         </div>
         <div class="col-md-8">
             @include('page.edit', ['page' => $page])
@@ -28,10 +28,10 @@
                 <table class="table table-condensed">
                     <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Selected</th>
-                        <th>Downloaded</th>
-                        <th>Rejected</th>
+                        <th>Nombre</th>
+                        <th>Seleccionado</th>
+                        <th>Descargado</th>
+                        <th>Rechazado</th>
                         <th>URL</th>
                         <th>
                             {!! Form::open(['route' => ['project.module.page.image.proposal.store', $project, $module, $page, $image], 'method' => 'post']) !!}

@@ -6,7 +6,7 @@
 
         <div class="col-md-12">
             <h1>
-                Projects
+                Obra
                 <small class="pull-right">
                     {!! link_to_route('project.create', 'New', [], ['class' => 'btn btn-success']) !!}
                 </small>
@@ -18,7 +18,7 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>Nombre</th>
                     <th>Autores</th>
                     <th>Modulos Principales Proyectados</th>
                     <th>Paginas Totales Proyectadas</th>
@@ -65,7 +65,7 @@
                     <td>{!! link_to_route('project.edit', 'Edit', [$project], ['class' => 'btn btn-primary']) !!}</td>
                     <td>
                         {!! Form::open(['route' => ['project.destroy', $project->id], 'method' => 'delete']) !!}
-                            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                            {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
                         {!! Form::close() !!}
                     </td>
                 </tr>

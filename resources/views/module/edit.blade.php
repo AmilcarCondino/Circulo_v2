@@ -6,7 +6,7 @@
 
         <div class="col-md-12">
 
-            <h1>Edit Module</h1>
+            <h1>Editar Modulo</h1>
 
             {!! Form::model($module, ['route' => ['project.module.update', $project, $module], 'method' => 'put', 'class' => 'form-horizontal']) !!}
 
