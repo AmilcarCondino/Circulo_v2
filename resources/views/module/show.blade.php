@@ -15,7 +15,7 @@
 <div class="row">
 
     <div class="col-md-12">
-        <p><strong>Paginas Planeadas:</strong> {{ $module->projected_total_pages }}</p>
+        <p><strong>Paginas Del Modulo:</strong> {{ $module->projected_total_pages }}</p>
     </div>
 
 </div>

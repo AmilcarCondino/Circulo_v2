@@ -26,6 +26,7 @@ class ProjectRequest extends Request {
             'name' => 'unique:projects,name|required|min:3',
             'projected_total_modules' => 'required|numeric',
             'projected_total_pages' => 'required|numeric',
+            'project_code' => 'unique:projects,project_code|required|min:3',
 
         ];
 
