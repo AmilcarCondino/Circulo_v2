@@ -28,14 +28,9 @@
                 <table class="table table-condensed">
                     <thead>
                     <tr>
-                        <th>Nombre</th>
-                        <th>Seleccionado</th>
-                        <th>Descargado</th>
-                        <th>Rechazado</th>
-                        <th>URL</th>
                         <th>
                             {!! Form::open(['route' => ['project.module.page.image.proposal.store', $project, $module, $page, $image], 'method' => 'post']) !!}
-                                {!! Form::submit('Añadir Propuesta', ['class' => 'btn btn-sm btn-primary']) !!}
+                                {!! Form::submit('Añadir Nueva Propuesta', ['class' => 'btn btn-sm btn-primary']) !!}
                             {!! Form::close() !!}
                         </th>
                     </tr>
@@ -43,6 +38,11 @@
                     <tbody>
                     @foreach($image->proposals as $proposal)
                         @include('proposal.edit', ['image' => $image, 'proposal' => $proposal])
+                        <div class="form-group">
+                            {!! Form::open(['route' => ['project.module.page.image.proposal.destroy', $project, $module, $page, $image, $proposal], 'method' => 'delete']) !!}
+                                {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+                            {!! Form::close() !!}
+                        </div>
                     @endforeach
                     </tbody>
                 </table>

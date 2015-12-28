@@ -44,7 +44,7 @@ class ProposalController extends Controller
     {
         $proposal = new Proposal;
         $image->proposals()->save($proposal);
-        return redirect()->route('project.module.page.image.show', [$project, $module, $page, $image]);
+        return redirect()->back();
     }
 
     /**
@@ -92,7 +92,7 @@ class ProposalController extends Controller
     {
         $proposal->update( $request->all() );
         $proposal->save();
-        return redirect()->route('project.module.page.image.show', [$project, $module, $page, $image]);
+        return redirect()->back();
     }
 
     /**
@@ -109,6 +109,6 @@ class ProposalController extends Controller
     public function destroy(Project $project, Module $module, Page $page, Image $image, Proposal $proposal)
     {
         $proposal->delete();
-        return redirect()->route('project.module.page.image.show', [$project, $module, $page, $image]);
+        return redirect()->back();
     }
 }
