@@ -35,7 +35,7 @@
                         <th>URL</th>
                         <th>
                             {!! Form::open(['route' => ['project.module.page.image.proposal.store', $project, $module, $page, $image], 'method' => 'post']) !!}
-                                {!! Form::submit('Add Proposal', ['class' => 'btn btn-sm btn-primary']) !!}
+                                {!! Form::submit('Añadir Propuesta', ['class' => 'btn btn-sm btn-primary']) !!}
                             {!! Form::close() !!}
                         </th>
                     </tr>
