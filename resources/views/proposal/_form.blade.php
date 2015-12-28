@@ -9,7 +9,7 @@
 <div class="form-group {{ $errors->has('url') ? 'has-error' : '' }}">
     {!! Form::label('url', 'URL', ['class' => 'col-sm-2 control-label']) !!}
     <div class="col-sm-10">
-        {!! Form::text('url', $proposal->name, ['class' => 'form-control', 'placeholder' => 'URL']) !!}
+        {!! Form::text('url', $proposal->url, ['class' => 'form-control', 'placeholder' => 'URL']) !!}
         {!! $errors->first('url', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
