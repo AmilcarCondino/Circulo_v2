@@ -8,6 +8,11 @@
 
                 @include('image._form')
 
+                <div class="form-group">
+                    {!! Form::open(['route' => ['project.module.page.image.destroy', $project, $module, $page, $image], 'method' => 'delete']) !!}
+                        {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+                    {!! Form::close() !!}
+                </div>
             {!! Form::close() !!}
 
         </div>

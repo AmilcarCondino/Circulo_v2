@@ -10,10 +10,11 @@
         </div>
         <div class="col-md-8">
             @include('page.edit', ['page' => $page])
+
         </div>
         <div class="col-md-2">
             {!! Form::open(['route' => ['project.module.page.image.store', $project, $module, $page], 'method' => 'post']) !!}
-                {!! Form::submit('Add Image', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Agregar Imagen', ['class' => 'btn btn-primary']) !!}
             {!! Form::close() !!}
         </div>
     </div>
