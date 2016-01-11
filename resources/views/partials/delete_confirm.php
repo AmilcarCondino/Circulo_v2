@@ -11,7 +11,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-danger" id="confirm">Delete</button>
+                <button type="button" class="btn btn-primary" id="confirm">Delete</button>
             </div>
         </div>
     </div>
@@ -20,6 +20,7 @@
 
 <!-- Dialog show event handler -->
 <script type="text/javascript">
+
     $('#confirmDelete').on('show.bs.modal', function (e) {
         $message = $(e.relatedTarget).attr('data-message');
         $(this).find('.modal-body p').text($message);
@@ -33,6 +34,12 @@
 
     <!-- Form confirm (yes/ok) handler, submits form -->
     $('#confirmDelete').find('.modal-footer #confirm').on('click', function(){
-        $(this).data('form').submit();
+        $('#delete_form').submit();
     });
+
+
+    $("#delete_button").on('click', function(e){
+        e.preventDefault();
+    });
+
 </script>
