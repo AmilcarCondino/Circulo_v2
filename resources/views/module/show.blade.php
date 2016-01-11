@@ -27,7 +27,7 @@
     </div>
 
     <div class="col-md-2">
-        {!! link_to_route('project.module.page.create', 'New Page', [$project, $module], ['class' => 'btn btn-success']) !!}
+        {!! link_to_route('project.module.page.create', 'Nueva Pagina', [$project, $module], ['class' => 'btn btn-success']) !!}
     </div>
 
 </div>
@@ -97,10 +97,31 @@
     </div>
 
 
+{!! Form::open(['route' => ['project.module.page.update', $project, $module, $page], 'method' => 'put']) !!}
+
+<div class="form-group {{ $errors->has('page_stage') ? 'has-error' : '' }}">
+    {!! Form::label('page_stage', 'Estadio de Pagina', ['class' => 'col-sm-2 control-label']) !!}
+    <div class="col-sm-10">
+        {!! Form::select('page_stage', ['Autor' => 'Autor', 'Edicion' => 'Edicion', 'Diagramacion' => 'Diagramacion', 'Edicion 1ra vuelta' => 'Edicion 1ra vuelta', 'Diagramacion 1ra Vuelta' => 'Diagramacion 1ra Vuelta', 'Edicion 2ra vuelta' => 'Edicion 2ra vuelta', 'Correccion 1ra vuelta' => 'Correccion 1ra vuelta', 'Diagramacion 2ra Vuelta' => 'Diagramacion 2da Vuelta', 'Edicion 3ra vuelta' => 'Edicion 3ra vuelta', 'Correccion 2ra vuelta' => 'Correccion 2ra vuelta', 'Diagramacion 3ra Vuelta' => 'Diagramacion 3ra Vuelta', 'Preprensa' => 'Preprensa', 'Cierre' => 'Cierre'], null, ['class' => 'form-control']) !!}
+        {!! $errors->first('page_stage', '<p class="help-block">:message</p>') !!}
+    </div>
+</div>
+
+<div class="form-group {{ $errors->has('layout_stage') ? 'has-error' : '' }}">
+    {!! Form::label('layout_stage', 'Estadio de Edicion', ['class' => 'col-sm-2 control-label']) !!}
+    <div class="col-sm-10">
+        {!! Form::select('layout_stage', ['Sobra Texto' => 'Sobra Texto', 'Falta Texto' => 'Falta Texto', 'Rediagramar' => 'Rediagramar', 'Otro' => 'Otro', 'Ok' => 'Ok'], null, ['class' => 'form-control']) !!}
+        {!! $errors->first('layout_stage', '<p class="help-block">:message</p>') !!}
+    </div>
+</div>
 
 
-
-
+<div class="row">
+    <div class="col-xs-12">
+        {!! Form::submit('Editar todas las paginas', ['class' => 'btn btn-primary pull-right']) !!}
+        {!! Form::close() !!}
+    </div>
+</div>
 
 
 
