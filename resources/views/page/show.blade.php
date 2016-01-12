@@ -25,11 +25,33 @@
         <div class="col-md-6">
             <div class="well">
                 @include('image.edit', ['image' => $image])
+
+
                 <div class="form-group">
-                    {!! Form::open(['route' => ['project.module.page.image.destroy', $project, $module, $page, $image], 'method' => 'delete', 'id' => 'delete_form']) !!}
-                        {!! Form::submit('Eliminar', ['class' => 'btn btn-danger', 'id' => 'delete_button', 'type' => 'button', 'data-toggle' => 'modal', 'data-target' => '#confirmDelete', 'data-title' => 'Delete User', 'data-message' => 'Are you sure you want to delete this user ?' ]) !!}
-                    {!! Form::close() !!}
+                    {!! Form::open(['route' => ['project.module.page.image.destroy', $project, $module, $page, $image], 'method' => 'delete']) !!}
+
+
+                    {!!Form::button('Disable', [
+                        'class' => 'btn btn-danger',
+                        'type' => 'button',
+                        'data-toggle' => 'modal',
+                        'data-target' => '#confirmDelete',
+                        'data-title' => 'Eliminar',
+                        'data-message' => 'Are you sure you want to disable this user account?',
+                        'data-btncancel' => 'btn-default',
+                        'data-btnaction' => 'btn-danger',
+                        'data-btntxt' => 'Eliminar'
+                        ])
+                    !!}
+
+                    {!!Form::close()!!}
+
                 </div>
+
+
+
+
+
                 <table class="table table-condensed">
                     <thead>
                     <tr>
