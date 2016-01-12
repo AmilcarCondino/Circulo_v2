@@ -7,7 +7,7 @@
 
     <title>Círculo v2.0</title>
 
-    {{--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.3/css/bootstrap-select.min.css"/>--}}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.3/css/bootstrap-select.min.css"/>
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
 
     {{--<!-- Fonts -->--}}
@@ -39,6 +39,6 @@
     </div>
 
     <!-- Scripts -->
-
+    @include('partials.delete_confirm')
 </body>
 </html>

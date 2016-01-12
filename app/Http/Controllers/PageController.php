@@ -68,6 +68,20 @@ class PageController extends Controller
     public function update(PageRequest $request, Project $project, Module $module, Page $page)
     {
 
+        if (isset ($_POST['module_id']) )
+        {
+            $module_id = $_POST['module_id'];
+
+            $pages = Page::where('module_id', '=', $module_id)->get();
+
+            foreach ($pages as $page)
+            {
+                $page->update( $request->all() );
+                $page->save();
+            }
+            return redirect()->route('project.module.show', [$project, $module]);
+        }
+
 
         if (isset ($_POST['module_name']) )
         {

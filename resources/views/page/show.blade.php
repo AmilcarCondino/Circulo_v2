@@ -1,7 +1,6 @@
 @extends('app')
 
 @section('content')
-
     @include('partials.breadcrumbs')
 
     <div class="row">
@@ -47,11 +46,6 @@
                     {!!Form::close()!!}
 
                 </div>
-
-
-
-
-
                 <table class="table table-condensed">
                     <thead>
                     <tr>
@@ -79,5 +73,5 @@
         @endforeach
 
     </div>
-@include('partials.delete_confirm')
+
 @endsection

@@ -1,7 +1,3 @@
-
-
-
-<!-- ########################### Initialize Modal Window for confirmation ########################-->
 <div class="modal fade" id="confirmDelete" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
