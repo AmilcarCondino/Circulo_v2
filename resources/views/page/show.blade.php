@@ -30,13 +30,13 @@
                     {!! Form::open(['route' => ['project.module.page.image.destroy', $project, $module, $page, $image], 'method' => 'delete']) !!}
 
 
-                    {!!Form::button('Disable', [
+                    {!!Form::button('Eliminar Imagen', [
                         'class' => 'btn btn-danger',
                         'type' => 'button',
                         'data-toggle' => 'modal',
                         'data-target' => '#confirmDelete',
-                        'data-title' => 'Eliminar',
-                        'data-message' => 'Are you sure you want to disable this user account?',
+                        'data-title' => 'Eliminar Imagen',
+                        'data-message' => 'Seguro que queres eliminar la imagen?, Tambien vas a eliminar todas las propuestas.',
                         'data-btncancel' => 'btn-default',
                         'data-btnaction' => 'btn-danger',
                         'data-btntxt' => 'Eliminar'
@@ -59,11 +59,27 @@
                     <tbody>
                     @foreach($image->proposals as $proposal)
                         @include('proposal.edit', ['image' => $image, 'proposal' => $proposal])
-                        <div class="form-group">
-                            {!! Form::open(['route' => ['project.module.page.image.proposal.destroy', $project, $module, $page, $image, $proposal], 'method' => 'delete']) !!}
-                                {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
-                            {!! Form::close() !!}
-                        </div>
+
+                    <div class="form-group">
+                        {!! Form::open(['route' => ['project.module.page.image.destroy', $project, $module, $page, $image], 'method' => 'delete']) !!}
+
+
+                        {!!Form::button('Eliminar Propuesta', [
+                            'class' => 'btn btn-danger',
+                            'type' => 'button',
+                            'data-toggle' => 'modal',
+                            'data-target' => '#confirmDelete',
+                            'data-title' => 'Eliminar Propuesta',
+                            'data-message' => 'Seguro que queres eliminar la propuesta de imagen?',
+                            'data-btncancel' => 'btn-default',
+                            'data-btnaction' => 'btn-danger',
+                            'data-btntxt' => 'Eliminar'
+                        ])
+                        !!}
+
+                        {!!Form::close()!!}
+
+                    </div>
                     @endforeach
                     </tbody>
                 </table>

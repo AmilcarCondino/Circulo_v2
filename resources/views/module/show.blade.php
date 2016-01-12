@@ -53,10 +53,25 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12">
+                <div class="form-group">
                     {!! Form::open(['route' => ['project.module.page.destroy', $project, $module, $page], 'method' => 'delete']) !!}
-                        {!! Form::submit('Delete', ['class' => 'btn btn-xs btn-danger pull-right']) !!}
-                    {!! Form::close() !!}
+
+
+                    {!!Form::button('Eliminar', [
+                        'class' => 'btn btn-danger',
+                        'type' => 'button',
+                        'data-toggle' => 'modal',
+                        'data-target' => '#confirmDelete',
+                        'data-title' => 'Eliminar Imagen',
+                        'data-message' => 'Seguro que queres eliminar la pagina?, Tambien vas a elimnar todas las imagenes.',
+                        'data-btncancel' => 'btn-default',
+                        'data-btnaction' => 'btn-danger',
+                        'data-btntxt' => 'Eliminar'
+                    ])
+                    !!}
+
+                    {!!Form::close()!!}
+
                 </div>
             </div>
         </div>
