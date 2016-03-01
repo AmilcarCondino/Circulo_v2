@@ -25,7 +25,7 @@
 <div class="form-group {{ $errors->has('stage') ? 'has-error' : '' }}">
     {!! Form::label('stage', 'Etapa', ['class' => 'col-sm-2 control-label']) !!}
     <div class="col-sm-10">
-        {!! Form::select('stage', ['Busqueda' => 'Busqueda', 'Seleccion' => 'Seleccion', 'Bocetao' => 'Boceto', 'Color' => 'Color', 'Descarga' => 'Descarga', 'Terminacion' => 'Terminacion', 'Retoque' => 'Retoque', 'Correccion' => 'Correccion'], null, ['class' => 'validate']) !!}
+        {!! Form::select('stage', ['Busqueda' => 'Busqueda', 'Seleccion' => 'Seleccion', 'Bocetao' => 'Boceto', 'Color' => 'Color', 'Descarga' => 'Descarga', 'Terminacion' => 'Terminacion', 'Retoque' => 'Retoque', 'Correccion' => 'Correccion', 'Ok' => 'Ok'], null, ['class' => 'validate']) !!}
         {!! $errors->first('stage', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
@@ -33,7 +33,7 @@
 <div class="form-group {{ $errors->has('model_file') ? 'has-error' : '' }}">
     {!! Form::label('model_file', 'Modelo', ['class' => 'col-sm-2 control-label']) !!}
     <div class="col-sm-10">
-        {!! Form::text('model_file', $image->model_file, ['class' => 'form-control', 'placeholder' => 'Modelo']) !!}
+        {!! Form::file('model_file', $image->model_file, ['class' => 'form-control', 'placeholder' => 'Modelo']) !!}
         {!! $errors->first('model_file', '<p class="help-block">:message</p>') !!}
     </div>
 </div>

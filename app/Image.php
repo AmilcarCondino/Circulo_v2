@@ -15,6 +15,7 @@ class Image extends Model
 
         'name',
         'assigned_to',
+        'image_sort',
         'stage',
         'model_file',
         'request',

@@ -18,7 +18,7 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Nombre</th>
+                    <th>URL</th>
                     <th>Asignado</th>
                     <th>Etapa</th>
                     <th>Pedido</th>
@@ -27,7 +27,7 @@
                 <tbody>
                 <tr>
                     <td>{{ $image->id }}</td>
-                    <td>{{ $image->name }}</td>
+                    <td><a href="{{ $image->name }}"></a></td>
                     <td>{{ $image->assigned_to }}</td>
                     <td>{{ $image->stage }}</td>
                     <td>{{ $image->request }}</td>

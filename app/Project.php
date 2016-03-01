@@ -18,6 +18,7 @@ class Project extends Model
 
         'name',
         'authors',
+        'project_code',
         'projected_total_modules',
         'projected_total_pages',
         'format',

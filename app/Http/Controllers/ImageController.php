@@ -39,8 +39,20 @@ class ImageController extends Controller
      */
     public function store(ImageRequest $request, Project $project, Module $module, Page $page)
     {
+
         $image = new Image( $request->all() );
+
+        $model = Input::file('model_file');
+
+        $original_name = $model->getClientOriginalName();
+        $model_name = $project->id . '.' . $module->id . '.' . $page->id . '.' . $original_name;
+
+        $destination_path = public_path().'/uploads/models/';
+
+        $model->move($destination_path, $model_name);
+
         $page->images()->save($image);
+
         return redirect()->route('project.module.page.show', [$project, $module, $page]);
     }
 
