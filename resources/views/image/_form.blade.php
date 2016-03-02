@@ -33,7 +33,7 @@
 <div class="form-group {{ $errors->has('model_file') ? 'has-error' : '' }}">
     {!! Form::label('model_file', 'Modelo', ['class' => 'col-sm-2 control-label']) !!}
     <div class="col-sm-10">
-        {!! Form::file('model_file', $image->model_file, ['class' => 'form-control', 'placeholder' => 'Modelo']) !!}
+        {!! Form::text('model_file', $image->model_file, ['class' => 'form-control', 'placeholder' => 'Modelo']) !!}
         {!! $errors->first('model_file', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
