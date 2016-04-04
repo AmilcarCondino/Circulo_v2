@@ -33,21 +33,26 @@
 <div class="form-group {{ $errors->has('model_file') ? 'has-error' : '' }}">
     {!! Form::label('model_file', 'Modelo', ['class' => 'col-sm-2 control-label']) !!}
     <div class="col-sm-10">
-        {!! Form::text('model_file', $image->model_file, ['class' => 'form-control', 'placeholder' => 'Modelo']) !!}
-        {!! $errors->first('model_file', '<p class="help-block">:message</p>') !!}
+<!--        {!! Form::text('model_file', $image->model_file, ['class' => 'form-control', 'placeholder' => 'Modelo']) !!}-->
+<!--        {!! $errors->first('model_file', '<p class="help-block">:message</p>') !!}-->
+
+            <input type="file" name="model_file" id="model_file">
     </div>
+
+    <img src="{{ asset('uploads/models/' . $image->model_file)}}"/>
+
 </div>
 
-<div class="form-group {{ $errors->has('request') ? 'has-error' : '' }}">
-    {!! Form::label('request', 'Requerimientos', ['class' => 'col-sm-2 control-label']) !!}
-    <div class="col-sm-10">
-        {!! Form::textarea('request', $image->request, ['class' => 'form-control', 'placeholder' => 'Requerimientos']) !!}
-        {!! $errors->first('request', '<p class="help-block">:message</p>') !!}
-    </div>
-</div>
+        <div class="form-group {{ $errors->has('request') ? 'has-error' : '' }}">
+            {!! Form::label('request', 'Requerimientos', ['class' => 'col-sm-2 control-label']) !!}
+            <div class="col-sm-10">
+                {!! Form::textarea('request', $image->request, ['class' => 'form-control', 'placeholder' => 'Requerimientos']) !!}
+                {!! $errors->first('request', '<p class="help-block">:message</p>') !!}
+            </div>
+        </div>
 
-<div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-        {!! Form::submit('Guardar', ['class' => 'btn btn-success pull-right']) !!}
-    </div>
-</div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                {!! Form::submit('Guardar', ['class' => 'btn btn-success pull-right']) !!}
+            </div>
+        </div>

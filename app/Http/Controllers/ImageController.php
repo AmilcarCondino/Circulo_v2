@@ -12,6 +12,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use \Input as Input;
+
 class ImageController extends Controller
 {
     /**
@@ -41,16 +43,6 @@ class ImageController extends Controller
     {
 
         $image = new Image( $request->all() );
-
-//        $model = Input::file('model_file');
-//
-//        $original_name = $model->getClientOriginalName();
-//        $model_name = $project->id . '.' . $module->id . '.' . $page->id . '.' . $original_name;
-//
-//        $destination_path = public_path().'/uploads/models/';
-//
-//        $model->move($destination_path, $model_name);
-
         $page->images()->save($image);
 
         return redirect()->route('project.module.page.show', [$project, $module, $page]);
@@ -97,6 +89,14 @@ class ImageController extends Controller
     public function update(ImageRequest $request, Project $project, Module $module, Page $page, Image $image)
     {
         $image->update( $request->all() );
+
+        if(Input::file('model_file')){
+
+            $file = Input::file('model_file');
+            $file->move('uploads/models', $file->getClientOriginalName());
+            $image->model_file = $file->getClientOriginalName();
+
+        }
         $image->save();
         return redirect()->route('project.module.page.show', [$project, $module, $page]);
     }
