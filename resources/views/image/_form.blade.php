@@ -38,8 +38,9 @@
 
             <input type="file" name="model_file" id="model_file">
     </div>
-
-    <img src="{{ asset('uploads/models/' . $image->model_file)}}"/>
+<div class="row">
+    <img src="{{ asset('uploads/models/' . $image->model_file)}}" style="height: 150px";/>
+</div>
 
 </div>
 
