@@ -81,5 +81,6 @@
 <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
     <div class="col-sm-offset-2 col-sm-10">
         {!! Form::submit('Save', ['class' => 'btn btn-success pull-right']) !!}
+            <a class="btn btn-danger" href="{{ URL::previous() }}">Cancelar</a>
     </div>
 </div>

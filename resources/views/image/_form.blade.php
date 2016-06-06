@@ -23,7 +23,7 @@
 </div>
 
 <div class="form-group {{ $errors->has('stage') ? 'has-error' : '' }}">
-    {!! Form::label('stage', 'Etapa', ['class' => 'col-sm-2 control-label']) !!}
+    {!! Form::label('stage', 'Estado', ['class' => 'col-sm-2 control-label']) !!}
     <div class="col-sm-10">
         {!! Form::select('stage', ['Busqueda' => 'Busqueda', 'Seleccion' => 'Seleccion', 'Bocetao' => 'Boceto', 'Color' => 'Color', 'Descarga' => 'Descarga', 'Terminacion' => 'Terminacion', 'Retoque' => 'Retoque', 'Correccion' => 'Correccion', 'Ok' => 'Ok'], null, ['class' => 'validate']) !!}
         {!! $errors->first('stage', '<p class="help-block">:message</p>') !!}
@@ -55,5 +55,6 @@
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 {!! Form::submit('Guardar', ['class' => 'btn btn-success pull-right']) !!}
+                <a class="btn btn-danger" href="{{ URL::previous() }}">Cancelar</a>
             </div>
         </div>

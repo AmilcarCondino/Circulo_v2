@@ -15,7 +15,7 @@
 </div>
 
 <div class="form-group {{ $errors->has('layout_stage') ? 'has-error' : '' }}">
-    {!! Form::label('layout_stage', 'Estadio de Edicion', ['class' => 'col-sm-2 control-label']) !!}
+    {!! Form::label('layout_stage', 'Estadio de Diagramacion', ['class' => 'col-sm-2 control-label']) !!}
     <div class="col-sm-10">
         {!! Form::select('layout_stage', ['Sobra Texto' => 'Sobra Texto', 'Falta Texto' => 'Falta Texto', 'Rediagramar' => 'Rediagramar', 'Otro' => 'Otro', 'Ok' => 'Ok'], null, ['class' => 'form-control']) !!}
         {!! $errors->first('layout_stage', '<p class="help-block">:message</p>') !!}
@@ -33,6 +33,7 @@
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
         {!! Form::submit('Guardar', ['class' => 'btn btn-success pull-right']) !!}
+        <a class="btn btn-danger" href="{{ URL::previous() }}">Cancelar</a>
     </div>
 </div>
 

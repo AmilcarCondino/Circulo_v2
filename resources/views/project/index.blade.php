@@ -65,7 +65,19 @@
                     <td>{!! link_to_route('project.edit', 'Edit', [$project], ['class' => 'btn btn-primary']) !!}</td>
                     <td>
                         {!! Form::open(['route' => ['project.destroy', $project->id], 'method' => 'delete']) !!}
-                            {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
+
+                            {!!Form::button('Eliminar Obra', [
+                                'class' => 'btn btn-danger',
+                                'type' => 'button',
+                                'data-toggle' => 'modal',
+                                'data-target' => '#confirmDelete',
+                                'data-title' => 'Eliminar Obra',
+                                'data-message' => 'Seguro que queres eliminar esta obra? Se perdera todo lo relacionado a la misma',
+                                'data-btncancel' => 'btn-default',
+                                'data-btnaction' => 'btn-danger',
+                                'data-btntxt' => 'Eliminar'
+                                ])
+                            !!}
                         {!! Form::close() !!}
                     </td>
                 </tr>

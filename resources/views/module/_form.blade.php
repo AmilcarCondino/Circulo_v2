@@ -21,5 +21,6 @@
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
         {!! Form::submit('Guardar', ['class' => 'btn btn-success pull-right']) !!}
+        <a class="btn btn-danger" href="{{ URL::previous() }}">Cancelar</a>
     </div>
 </div>
