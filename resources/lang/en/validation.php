@@ -89,8 +89,31 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+
+        //Error Messages for Project Name
+        'name' => [
+            'required' => 'Preguntale a Morteo como se va a llamar el libro',
+            'unique' => 'Ya tenes un libro que se llama igual',
+            'min' => 'Ponele mas ganas que el titulo es muy corto'
+        ],
+
+        //Error Messages for Project Total Modules
+        'projected_total_modules' => [
+            'required' => 'Algun modulo tiene que tener',
+            'numeric' => 'Hay que poner numeritos no letras',
+        ],
+
+        //Error Messages for Project Total Pages
+        'projected_total_pages' => [
+            'required' => 'Un libro sin paginas es un Poster',
+            'numeric' => 'Hay que poner numeritos no letras',
+        ],
+
+        //Error Messages for Project Code
+        'project_code' => [
+            'required' => 'Mike dice que cada obra tiene que tener codigo, peleate con el',
+            'unique' => 'NOP, ess codigo ya lo usaste, proba otro',
+            'min' => 'Ponele mas ganas, minimo 3 letras'
         ],
     ],
 

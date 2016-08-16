@@ -57,7 +57,10 @@
                     </tr>
                     </thead>
                     <tbody>
+
                     @foreach($image->proposals as $proposal)
+                    <tr>
+                        <td>
                         @include('proposal.edit', ['image' => $image, 'proposal' => $proposal])
 
                     <div class="form-group">
@@ -80,6 +83,8 @@
                         {!!Form::close()!!}
 
                     </div>
+                    </td>
+                    </tr>
                     @endforeach
                     </tbody>
                 </table>

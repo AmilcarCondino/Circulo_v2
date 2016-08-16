@@ -1,10 +1,10 @@
-<div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-    {!! Form::label('name', 'Nombre', ['class' => 'col-sm-2 control-label']) !!}
-    <div class="col-sm-10">
-        {!! Form::text('name', $page->name, ['class' => 'form-control', 'placeholder' => 'Pagina']) !!}
-        {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
-    </div>
-</div>
+<!--<div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">-->
+<!--    {!! Form::label('name', 'Nombre', ['class' => 'col-sm-2 control-label']) !!}-->
+<!--    <div class="col-sm-10">-->
+<!--        {!! Form::text('name', $page->name, ['class' => 'form-control', 'placeholder' => 'Pagina']) !!}-->
+<!--        {!! $errors->first('name', '<p class="help-block">:message</p>') !!}-->
+<!--    </div>-->
+<!--</div>-->
 
 <div class="form-group {{ $errors->has('page_stage') ? 'has-error' : '' }}">
     {!! Form::label('page_stage', 'Estadio de Pagina', ['class' => 'col-sm-2 control-label']) !!}
