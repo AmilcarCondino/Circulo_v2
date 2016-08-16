@@ -5,7 +5,7 @@
 
     <div class="row">
         <div class="col-md-2">
-            <h1>PAgina {{ $page->name }}</h1>
+            <h1>Pagina {{ $page->name }}</h1>
         </div>
         <div class="col-md-8">
             @include('page.edit', ['page' => $page])
@@ -64,7 +64,7 @@
                         @include('proposal.edit', ['image' => $image, 'proposal' => $proposal])
 
                     <div class="form-group">
-                        {!! Form::open(['route' => ['project.module.page.image.destroy', $project, $module, $page, $image], 'method' => 'delete']) !!}
+                        {!! Form::open(['route' => ['project.module.page.image.proposal.destroy', $project, $module, $page, $image, $proposal], 'method' => 'delete']) !!}
 
 
                         {!!Form::button('Eliminar Propuesta', [

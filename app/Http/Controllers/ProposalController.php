@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use \Input as Input;
+
 class ProposalController extends Controller
 {
     /**
@@ -42,7 +44,7 @@ class ProposalController extends Controller
      */
     public function store(ImageRequest $request, Project $project, Module $module, Page $page, Image $image)
     {
-        $proposal = new Proposal;
+        $proposal = new Proposal( $request->all() );
         $image->proposals()->save($proposal);
         return redirect()->back();
     }
